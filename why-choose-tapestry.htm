@@ -8,7 +8,14 @@
 		<meta name="keywords" content="Confess, Tapestry, Web Framework">  
 		<title>Why choose Tapestry as your web framework?</title>
 		<link rel="shortcut icon" href="TODO">
+
+		<script type="text/javascript" src="resources/js/shCore.js"></script>
+		<script type="text/javascript" src="resources/js/shBrushJava.js"></script>
+		<script type="text/javascript" src="resources/js/shBrushXml.js"></script>
+
 		<link rel="stylesheet" href="resources/css/style.css">
+		<link href="resources/css/shCore.css" rel="stylesheet" type="text/css" />
+		<link href="resources/css/shThemeEclipse.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
 		<div id="impress">
@@ -23,7 +30,7 @@
 			</div>
 
 			<!-- Title -->
-			<div id="title" class="step" data-scale="3" data-x="0" data-y="0">
+			<div id="title" class="step" data-scale="10" data-x="-5000" data-y="-800">
 				<div>
 					<p>Why choose</p>
 					<p><img src="resources/images/tapestry.png" alt="Tapestry"/></p>
@@ -33,7 +40,7 @@
 			<!-- /Title -->
 
 			<!-- Speaker -->
-			<div id="speaker" class="step" data-x="1500" data-y="500">
+			<div id="speaker" class="step" data-scale="2" data-x="-1500" data-y="0">
 				<img class="speakerpic" alt="Picture of Christian K&ouml;berl" src="resources/images/ChristianKoeberl.jpg" />
 				<div class="title">Christian K&ouml;berl</div>
 				<div class="slide-content">
@@ -51,18 +58,103 @@
 			</div>
 			<!-- /Speaker -->
 
+			<div id="porscheinformatik">
+			</div>
+
 			<div id="actionvscomponent" class="step" data-x="-1000" data-y="1200">
 				<div class="title">Web Frameworks</div>
+				<ul>
+					<li></li>
+				</ul>
+			</div>
+
+			<div id="benefits"class="step" data-scale="6" data-x="2000" data-y="3000">
+				<div class="title" style="height:650px">Benefits of Tapestry</div>
+			</div>
+
+			<div id="productivity" class="step slide" data-scale="1" data-x="0" data-y="2500">
+				TODO add productivitiy image
+			</div>
+			<div id="classreloading" class="step slide" data-scale="1" data-x="0" data-y="3300">
+				<div class="title">Live Class Reloading</div>
+				<ul>
+					<li></li>
+				</ul>
+			</div>
+
+			<div id="errormessages" class="step slide" data-x="1200" data-y="2500">
+				TODO add image
+			</div>
+			<div id="stacktrace" class="step slide" data-x="1200" data-y="3300">
+				<div class="title">Stacktrace</div>
+			</div>
+			<div id="tapestry-error" class="step slide" data-x="1200" data-y="4100">
+				<div class="title">Tapestry Error Reporting</div>
+			</div>
+			<div id="tapestry-error-ajax" class="step slide" data-x="1200" data-y="4900">
+				<div class="title">Ajax Error Reporting</div>
+			</div>
+
+			<div id="html" class="step" data-x="2400" data-y="2500">
+				<pre style="font-size: 5em;">&lt;html&gt;</pre>
+			</div>
+			<div id="invinstr" class="step slide" data-x="2400" data-y="3300">
+				<div class="title">Invisible Instrumentation (1)</div>
+				MyComponent.tml:
+				<script type="syntaxhighlighter" class="brush: xml; toolbar: false; gutter: false;"><![CDATA[
+<p>
+  <a href="#" t:type="EventLink" 
+    event="resetcounter" context="literal:1">
+      Reset counter to 1
+  </a>
+</p>
+]]></script>
+			</div>
+			<div id="invinstr2" class="step slide" data-x="2400" data-y="4100">
+				<div class="title">Invisible Instrumentation (2)</div>
+				MyComponent.java:
+				<script type="syntaxhighlighter" class="brush: java; toolbar: false; gutter: false;"><![CDATA[
+@Component(parameters = {"event=resetcounter",
+  "context=literal:1"})
+private EventLink resetCounterLink;
+]]></script>
+				MyComponent.tml:
+				<script type="syntaxhighlighter" class="brush: xml; toolbar: false; gutter: false;"><![CDATA[
+<p>
+  <a href="#" t:id="resetCounterLink">
+      Reset counter to 1
+  </a>
+</p>]]></script>
+			</div>
+			<div id="invinstr3" class="step slide" data-x="2400" data-y="4900">
+				<div class="title">Invisible Instrumentation (3)</div>
+				<script type="syntaxhighlighter" class="brush: xml; toolbar: false; gutter: false;"><![CDATA[
+<table t:type="Grid" source="personList">
+	<tr>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Date of Birth</th>
+	</tr>
+	<tr>
+		<td>Mary</td>
+		<td>Poppins</td>
+		<td>August 27, 1964</td>
+	</tr>
+</table>
+]]></script>
 			</div>
 
 			<!-- Overview -->
-			<div id="overview" class="step" data-x="1500" data-y="2000" data-scale="9"></div>
+			<div id="overview" class="step" data-x="-1200" data-y="1000" data-scale="12"></div>
 			<!-- /Overview -->
 
 		</div>
 
-		<div id="tapestry_logo" title="Apache Tapestry 5 - Code less, deliver more."></div>
+		<div id="tapestry_logo" title="Apache Tapestry"></div>
 
+		<script type="text/javascript">
+		     SyntaxHighlighter.all()
+		</script>
 		<script src="resources/js/impress.js"></script>
 	</body>
 </html>
