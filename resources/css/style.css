@@ -79,7 +79,7 @@ pre {
 /* COMMON STEP STYLES */
 
 .step {
-    width: 900px;
+    width: 1100px;
     padding: 40px;
 
     -webkit-box-sizing: border-box;
@@ -98,13 +98,18 @@ pre {
     opacity: 0.5;
 }
 
-.title {
-	font-size: 1.5em;
-	margin-bottom: 30px;
+.slide .title {
+	color: #444;
 }
 
-.xml {
-	font-size: 0.3em ! important;
+.title {
+	font-size: 70px;
+	margin-bottom: 35px;
+}
+
+.syntaxhighlighter .line.alt1, .syntaxhighlighter .line.alt2 {
+	background-color: #ff8 ! important;
+	padding-left: 100px ! important;
 }
 
 #tapestry_logo {
@@ -135,10 +140,10 @@ pre {
 .slide {
     display: block;
 
-    width: 900px;
+    width: 1100px;
     height: 700px;
 
-    padding: 40px 60px;
+    /*padding: 40px 60px;*/
 
     border-radius: 10px;
 
@@ -170,6 +175,22 @@ pre {
     white-space: nowrap;
 }
 
+.slide img {
+	text-align: center;
+}
+
+.imageslide img {
+	height: 620px;
+}
+
+.imageslide .title {
+	top: 400px;
+	left: 100px;
+	position: absolute;
+	color: #333;
+	padding: 0.1em 0.3em;
+	background: rgba(255, 255, 255, 0.3);
+}
 
 /* IMPRESS NOT SUPPORTED STYLES */
 
