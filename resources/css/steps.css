@@ -1,0 +1,30 @@
+#title {
+	font-size: 5em;
+}
+
+#speaker .contact {
+	text-align: right;
+	font-size: 0.6em;
+}
+#speaker img.speakerpic {
+	float: right;
+}
+
+#web-framework-controversy .title {
+	color: #555;
+}
+#web-framework-controversy .title em {
+	color: red;
+}
+
+#actionvscomponent .title {
+	text-align: center;
+	height: 8em;
+}
+#mvc .logo {
+	height: 2em;	
+}
+
+#imgcredits {
+	display: none;
+}

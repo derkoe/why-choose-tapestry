@@ -95,7 +95,7 @@ pre {
 }
 
 .step:not(.active) {
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
 .slide .title {
@@ -105,6 +105,10 @@ pre {
 .title {
 	font-size: 70px;
 	margin-bottom: 35px;
+}
+
+.center {
+	text-align: center;
 }
 
 .syntaxhighlighter .line.alt1, .syntaxhighlighter .line.alt2 {
@@ -119,14 +123,6 @@ pre {
     height: 150px;
     width: 150px;
     background: url('../images/tapestry_logo_150.png');
-}
-
-#title {
-	font-size: 5em;
-}
-
-#speaker img.speakerpic {
-	float: right;
 }
 
 /*
