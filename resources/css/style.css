@@ -175,14 +175,25 @@ pre {
 	text-align: center;
 }
 
+.imageslide {
+	display: block;
+    width: 1100px;
+    height: 710px;
+}
+
 .imageslide img {
-	height: 620px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 0;
+	height: 710px;
 }
 
 .imageslide .title {
-	top: 400px;
-	left: 100px;
 	position: absolute;
+	top: 500px;
+	left: 100px;
+	z-index: 1;
 	color: #333;
 	padding: 0.1em 0.3em;
 	background: rgba(255, 255, 255, 0.3);

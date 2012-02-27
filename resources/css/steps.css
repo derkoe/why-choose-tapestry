@@ -25,6 +25,11 @@
 	height: 2em;	
 }
 
+#speed .title {
+	top: 100px;
+	left: 400px;
+}
+
 #imgcredits {
 	display: none;
 }
