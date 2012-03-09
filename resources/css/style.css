@@ -80,6 +80,9 @@ pre {
 }
 
 ul li {
+	font-size: 1.5em;
+	margin-left: 1em;
+	margin-bottom: 1em;
 	list-style: disc;
 }
 
@@ -122,10 +125,10 @@ body     { pointer-events: none; }
 
 .title {
 	font-size: 1.5em;
-	margin-bottom: 35px;
 }
-.slide .title {
+.slide .title, .slide h2 {
 	font-size: 2em;
+	margin-bottom: 35px;
 	color: #444;
 }
 h1 {
@@ -175,11 +178,11 @@ h1 {
 
     font-family: 'Open Sans', Arial, sans-serif;
 
-    color: rgb(102, 102, 102);
-    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+    color: rgb(60, 60, 60);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .3);
 
     font-size: 30px;
-    line-height: 36px;
+    line-height: 1;
 
     letter-spacing: -1px;
 }
@@ -205,15 +208,6 @@ h1 {
 .imageslide img {
 	height: 700px;
 }
-/*
-.imageslide img {
-	position: absolute;
-	left: 0;
-	top: 0;
-	z-index: 0;
-	height: 700px;
-}
-*/
 .imageslide .title {
 	position: absolute;
 	top: 500px;

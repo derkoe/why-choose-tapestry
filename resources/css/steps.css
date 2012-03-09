@@ -33,14 +33,15 @@
 	max-width: 10em;
 }
 
-#productivity img {
-}
-
 #speed .title {
 	position: absolute;
 	top: 100px;
 	right: 0;
 	left: 250px;
+}
+
+#speed-benchmark img {
+	margin-left: -1em;
 }
 
 #imgcredits {

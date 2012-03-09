@@ -112,7 +112,52 @@
 				<div class="title">Live Class Reloading</div>
 				<ul>
 					<li>JRebel &quot;light&quot;</li>
+					<li>Separate ClassLoader</li>
+					<li>Components, Pages - classes and templates</li>
+					<li>Service reloading</li>
 				</ul>
+			</div>
+			<div id="write-less" class="step slide" data-scale="1" data-x="0" data-y="4100">
+				<div class="title">Write Less</div>
+				<script type="syntaxhighlighter" class="brush: java; toolbar: false; gutter: false;"><![CDATA[
+					@Property
+					private Person person;
+					]]>
+				</script>
+				vs.
+				<script type="syntaxhighlighter" class="brush: java; toolbar: false; gutter: false;"><![CDATA[
+					private Person person;
+					
+					public Person getPerson() {
+					  return person;
+					}
+					
+					public Person setPerson(Person p) {
+					  person = p;
+					}
+					]]>
+				</script>
+			</div>
+			<div id="write-less-2" class="step slide" data-scale="1" data-x="0" data-y="4900">
+				<div class="title">Write Less</div>
+				<script type="syntaxhighlighter" class="brush: java; toolbar: false; gutter: false;"><![CDATA[
+					@OnEvent("delete")
+					void delete(Long id) {
+					  ...
+					}
+					]]>
+				</script>
+				vs.
+				<script type="syntaxhighlighter" class="brush: java; toolbar: false; gutter: false;"><![CDATA[
+					deleteComponent.addActionListener(
+					  new ActionListener() {
+					    public void actionPerformed(ActionEvent e) {
+					      ...
+					    }
+					  }
+					);
+					]]>
+				</script>
 			</div>
 
 			<div id="errormessages" class="step imageslide" data-x="1200" data-y="2500">
@@ -147,46 +192,46 @@
 				<div class="title">Invisible Instrumentation (1)</div>
 				MyComponent.tml:
 				<script type="syntaxhighlighter" class="brush: xml; toolbar: false; gutter: false;"><![CDATA[
-<p>
-  <a href="#" t:type="EventLink" 
-    event="resetcounter" context="literal:1">
-      Reset counter to 1
-  </a>
-</p>
-]]></script>
+				<p>
+				  <a href="#" t:type="EventLink" 
+				    event="resetcounter" context="literal:1">
+				      Reset counter to 1
+				  </a>
+				</p>
+				]]></script>
 			</div>
 			<div id="invinstr2" class="step slide" data-x="2400" data-y="4100">
 				<div class="title">Invisible Instrumentation (2)</div>
 				MyComponent.java:
 				<script type="syntaxhighlighter" class="brush: java; toolbar: false; gutter: false;"><![CDATA[
-@Component(parameters = {"event=resetcounter",
-  "context=literal:1"})
-private EventLink resetCounterLink;
-]]></script>
+				@Component(parameters = {"event=resetcounter",
+				  "context=literal:1"})
+				private EventLink resetCounterLink;
+				]]></script>
 				MyComponent.tml:
 				<script type="syntaxhighlighter" class="brush: xml; toolbar: false; gutter: false;"><![CDATA[
-<p>
-  <a href="#" t:id="resetCounterLink">
-      Reset counter to 1
-  </a>
-</p>]]></script>
+				<p>
+				  <a href="#" t:id="resetCounterLink">
+				      Reset counter to 1
+				  </a>
+				</p>]]></script>
 			</div>
 			<div id="invinstr3" class="step slide" data-x="2400" data-y="4900">
 				<div class="title">Invisible Instrumentation (3)</div>
 				<script type="syntaxhighlighter" class="brush: xml; toolbar: false; gutter: false;"><![CDATA[
-<table t:type="Grid" source="personList">
-	<tr>
-		<th>First Name</th>
-		<th>Last Name</th>
-		<th>Date of Birth</th>
-	</tr>
-	<tr>
-		<td>Mary</td>
-		<td>Poppins</td>
-		<td>August 27, 1964</td>
-	</tr>
-</table>
-]]></script>
+				<table t:type="Grid" source="personList">
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Date of Birth</th>
+					</tr>
+					<tr>
+						<td>Mary</td>
+						<td>Poppins</td>
+						<td>August 27, 1964</td>
+					</tr>
+				</table>
+				]]></script>
 			</div>
 
 			<div id="speed" class="step imageslide" data-x="3600" data-y="2500">
@@ -194,8 +239,31 @@ private EventLink resetCounterLink;
 				<img src="resources/images/speed.jpg" />
 			</div>
 
-			<div id="modular" class="step" data-x="4800" data-y="2500">
-				<div class="title">TODO Modularity</div>
+			<div id="speed-benchmark" class="step imageslide" data-x="3600" data-y="3300">
+				<img src="resources/images/benchmark.png" />
+			</div>
+
+			<div id="speed-best-practices" class="step slide" data-x="3600" data-y="4100">
+				<h2>Speed Best Practices</h2>
+				<ul>
+					<li>Combines and compresses JavaScripts & CSSs</li>
+					<li>GZIP compression</li>
+					<li>Eliminates whitespace</li>
+				</ul>
+			</div>
+
+			<div id="speed-static-structure" class="step slide" data-x="3600" data-y="4900">
+				<h2>Static Structure,<br/> Dynamic Behavior</h2>
+				<ul>
+					<li>Pages are singletons</li>
+					<li>Members are held in ThreadLocales</li>
+					<li></li>
+				</ul>
+			</div>
+
+			<div id="modular" class="step imageslide" data-x="4800" data-y="2500">
+				<div class="title">Modularity</div>
+				<img src="resources/images/modules.jpg" />
 			</div>
 
 			<div id="optimized" class="step" data-x="6000" data-y="2500">
@@ -210,7 +278,8 @@ private EventLink resetCounterLink;
 				<a href="http://www.flickr.com/photos/illbethesun/2858631255/">Yug_and_her</a><br/>
 				<a href="http://xkcd.com/815/"><img alt="" src="resources/images/mu.png" width="100" /> http://xkcd.com/815/</a><br/>
 				<a href="http://www.flickr.com/photos/proimos/4199675334/"><img src="resources/images/head_in_hand.jpg" width="100" /> http://www.flickr.com/photos/proimos/4199675334/</a>
-				http://www.porsche.com/microsite/911gt2rs/flash/images/wallpaper/1280x1024/07_gt2rs.jpg
+				modules.jpg http://www.flickr.com/photos/donsolo/2136923757/
+				speed.jpg http://www.porsche.com/microsite/911gt2rs/flash/images/wallpaper/1280x1024/07_gt2rs.jpg
 			</div>
 
 			<!-- Overview -->
