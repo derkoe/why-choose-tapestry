@@ -208,14 +208,14 @@ h1 {
 .imageslide img {
 	height: 700px;
 }
-.imageslide .title {
+.imageslide .title, .imageslide h2 {
 	position: absolute;
-	top: 500px;
-	left: 100px;
+	top: 450px;
+	left: 0;
 	z-index: 1;
 	color: #333;
 	padding: 0.1em 0.3em;
-	background: rgba(255, 255, 255, 0.3);
+	background: rgba(255, 255, 255, 0.4);
 }
 
 /* IMPRESS NOT SUPPORTED STYLES */

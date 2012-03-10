@@ -44,6 +44,15 @@
 	margin-left: -1em;
 }
 
+#modular .title {
+	top: 50px;
+}
+#secure .title {
+	left: 350px;
+	top: 150px;
+}
+
+
 #imgcredits {
 	display: none;
 }
