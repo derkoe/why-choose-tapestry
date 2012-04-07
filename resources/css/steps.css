@@ -52,6 +52,9 @@
 	top: 150px;
 }
 
+#metaprogramming-own-2 .syntaxhighlighter {
+	font-size: 18px ! important;
+}
 
 #imgcredits {
 	display: none;

@@ -140,27 +140,6 @@
 					]]>
 				</script>
 			</div>
-			<div id="write-less-2" class="step slide" data-scale="1" data-x="0" data-y="4900">
-				<div class="title">Write Less</div>
-				<script type="syntaxhighlighter" class="brush: java; toolbar: false; gutter: false;"><![CDATA[
-					@OnEvent("delete")
-					void delete(Long id) {
-					  ...
-					}
-					]]>
-				</script>
-				vs.
-				<script type="syntaxhighlighter" class="brush: java; toolbar: false; gutter: false;"><![CDATA[
-					deleteComponent.addActionListener(
-					  new ActionListener() {
-					    public void actionPerformed(ActionEvent e) {
-					      ...
-					    }
-					  }
-					);
-					]]>
-				</script>
-			</div>
 
 			<div id="errormessages" class="step imageslide" data-x="1200" data-y="2500">
 				<div class="title">Error Reporting</div>
@@ -275,24 +254,48 @@
 				<div class="title">Modularity</div>
 				<img src="resources/images/modules.jpg" />
 			</div>
+			<div id="modular-2" class="step slide" data-x="4800" data-y="3300">
+			</div>
 
 			<div id="secure" class="step imageslide" data-x="6000" data-y="2500">
 				<div class="title">Security</div>
 				<img src="resources/images/secure.jpg" />
+			</div>
+			<div id="secure-2" class="step slide" data-x="6000" data-y="3300">
 			</div>
 
 			<div id="metaprogramming" class="step imageslide" data-x="7200" data-y="2500">
 				<div class="title">Metaprogramming</div>
 				<img src="resources/images/relativity.jpg" />
 			</div>
-
-			<div id="metaprogramming-2" class="step slide" data-x="7200" data-y="3300">
-				<div class="title">Metapgrogramming</div>
+			<div id="metaprogramming-tap" class="step slide" data-x="7200" data-y="3300">
+				<div class="title">Provided By Tapestry</div>
 				<script type="syntaxhighlighter" class="brush: java; toolbar: false; gutter: false;"><![CDATA[
-					@RequiresPermission("user-view")
+					@OnEvent("delete")
+					void delete(Long id) {
+					  ...
+					}
+					]]>
+				</script>
+				vs.
+				<script type="syntaxhighlighter" class="brush: java; toolbar: false; gutter: false;"><![CDATA[
+					deleteComponent.addActionListener(
+					  new ActionListener() {
+					    public void actionPerformed(ActionEvent e) {
+					      ...
+					    }
+					  }
+					);
+					]]>
+				</script>
+			</div>
+			<div id="metaprogramming-own" class="step slide" data-x="7200" data-y="4100">
+				<div class="title">Add Your Own (1)</div>
+				<script type="syntaxhighlighter" class="brush: java; toolbar: false; gutter: false;"><![CDATA[
+					@RequiresRole("user-view")
 					public UserList
 					{
-					  @RequiresPermission("user-edit")
+					  @RequiresRole("user-edit")
 					  void onDeleteUser(Long userId)
 					  {
 					    ...
@@ -301,7 +304,42 @@
 					]]>
 				</script>
 			</div>
+			<div id="metaprogramming-own-2" class="step slide" data-x="7200" data-y="4900">
+				<div class="title">Add Your Own (2)</div>
+				<script type="syntaxhighlighter" class="brush: java; toolbar: false; gutter: false;"><![CDATA[
+					public class RequiresRoleWorker implements ComponentClassTransformWorker2 
+					{
+					    private final HttpServletRequest request;
+					
+					    public RequiresRoleWorker(HttpServletRequest request) 
+					    {
+					      super();
+					      this.request = request;
+					    }
+					
+					    public void transform(PlasticClass plasticClass, TransformationSupport support, 
+					        MutableComponentModel model) 
+					    {
+					      for (PlasticMethod method : plasticClass.getMethodsWithAnnotation(RequiresRole.class)) 
+					      {
+					        final String role = method.getAnnotation(RequiresRole.class).value();
+					        method.addAdvice(new MethodAdvice()
+					        {
+					          public void advise(MethodInvocation invocation)
+					          {
+					            if (request.isUserInRole(role))
+					              invocation.proceed();
+					            else
+					              throw new SecurityException("User has no role " + role);
+					          }
+					        });
+					      }
+					    }
+					}
+					]]>
+				</script>
 
+			</div>
 			<div id="imgcredits">
 				<a href="http://www.flickr.com/photos/illbethesun/2858631255/">Yug_and_her</a><br/>
 				<a href="http://xkcd.com/815/"><img alt="" src="resources/images/mu.png" width="100" /> http://xkcd.com/815/</a><br/>
