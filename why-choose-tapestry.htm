@@ -19,17 +19,18 @@
 		<link href="resources/css/steps.css" rel="stylesheet" media="screen">
 		<link href="resources/css/print.css" rel="stylesheet" media="print">
 	</head>
-	<body>
-		<div id="impress" class="impress-not-supported">
-	
-			<div class="fallback-message">
-				<p>
-					Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.
-				</p>
-				<p>
-					For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or Firefox browser.
-				</p>
-			</div>
+	<body class="impress-not-supported">
+
+		<div class="fallback-message">
+			<p>
+				Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.
+			</p>
+			<p>
+				For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or Firefox browser.
+			</p>
+		</div>
+
+		<div id="impress">
 
 			<!-- Title -->
 			<div id="title" class="step show" data-scale="6" data-x="-3000" data-y="-800">
@@ -370,6 +371,6 @@
 		     SyntaxHighlighter.all()
 		</script>
 		<script src="resources/js/impress.js"></script>
-		<script>impress();</script>
+		<script>impress().init();</script>
 	</body>
 </html>
