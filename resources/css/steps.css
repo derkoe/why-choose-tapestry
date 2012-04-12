@@ -1,4 +1,24 @@
 #title {
+	height: 768px;
+	width: 1024px;
+}
+#title.active {
+	background-color: white;
+	background-image: url("../images/confess_mountains.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#title h1 {
+	font-size: 1em;
+	margin-top: 450px;
+	margin-left: 150px;
+	color: rgb(255, 67, 0);
+}
+#speaker {
+	color: rgb(137, 137, 137);
+}
+#speaker.active {
+	color: #eee;
 }
 #speaker li {
 	font-size: 0.7em;
@@ -15,7 +35,7 @@
 	color: #999;
 }
 #web-framework-controversy h1 em {
-	color: red;
+	color: rgb(255, 67, 0);
 }
 
 #actionvscomponent .title {

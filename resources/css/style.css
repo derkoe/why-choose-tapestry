@@ -120,7 +120,13 @@ body     { pointer-events: none; }
 
 
 .step:not(.active) {
-    opacity: 0.3;
+    opacity: 0.4;
+}
+.hide:not(.active) {
+	opacity: 0;
+}
+.show:not(.active) {
+	opacity: 1;
 }
 
 .title {
