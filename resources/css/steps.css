@@ -15,19 +15,19 @@
 	color: rgb(255, 67, 0);
 }
 #speaker {
-	color: rgb(137, 137, 137);
+	color: #333;
 }
 #speaker.active {
-	color: #eee;
+	background-color: white;
 }
 #speaker li {
 	font-size: 0.7em;
 }
 #speaker .contact {
-	text-align: right;
+	text-align: left;
 	font-size: 0.6em;
 }
-#speaker img.speakerpic {
+#speaker img {
 	float: right;
 }
 
