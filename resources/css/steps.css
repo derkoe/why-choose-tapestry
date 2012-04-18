@@ -67,6 +67,9 @@
 #modular .title {
 	top: 50px;
 }
+#modules-dependencies img, #modules-dependencies-2 img {
+	width: 100%;
+}
 #secure .title {
 	left: 350px;
 	top: 150px;
