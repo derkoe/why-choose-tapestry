@@ -152,8 +152,8 @@ h1 {
 
 #tapestry_logo {
 	position: absolute;
-    bottom: 10px;
-    left: 10px;
+    bottom: 5px;
+    left: 5px;
     height: 150px;
     width: 150px;
     background: url('../images/tapestry_logo_150.png');
