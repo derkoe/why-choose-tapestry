@@ -1,4 +1,10 @@
-@import url(http://fonts.googleapis.com/css?family=Cabin);
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cabin Regular'), local('Cabin-Regular'), url('Cabin.woff') format('woff');
+}
+
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
