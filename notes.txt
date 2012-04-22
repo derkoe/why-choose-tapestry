@@ -1,0 +1,62 @@
+# web-framework-controversy
+ - mention 3 words -> always start verbal fight
+# orientation
+ - place of Tapestry in framework world
+# actionvscomponent
+ - 
+# mvc
+ - Model 2 archiecture
+ - controller does stuff, changes "model"
+ - delegates to a view
+# component
+ - richt vs. web
+# rich
+ - classic rich client
+ - like "real" richt clients
+ - recent ris of JS frameworks Backbone, Knockout, Ember (Sprout Core)
+# web
+ - just a few
+ - Apple WebObjects
+ - Tapestry
+ 
+# principles
+
+# productivity 
+ - important to us
+# classreloading
+ - script-like feeling
+ - feel of developing Tapestry apps
+# write-less
+ - not only for property access methods, useful for many things: security, tx, ...
+ - Metaprogramming, more later
+# beaneditor
+ - show small demo
+
+# errormessages
+ - effects procuctivity
+# stacktrace
+ - "typical" Java web framework
+# tapestry-error
+# tapestry-error-ajax
+
+# html
+ - WYSIWYG
+ - easier to understand for devs
+ - easier for designers
+# invinstr
+# invinstr2
+# invinstr3
+ - content removed by Tapestry at runtime
+ - t:content, t:remove
+
+# modular
+# modules-dependencies
+ - typical modular approach
+# modules-dependencies-2 
+ - add stuff to existing components
+ - Elipse Plug-In approach
+
+# metaprogramming
+# metaprogramming-tap
+ - Tapestry comes with many meta-programming concepts
+ - Event-handlers, 

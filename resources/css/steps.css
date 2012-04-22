@@ -42,15 +42,12 @@
 	text-align: center;
 	height: 600px;
 }
-#mvc .logo {
-	height: 2em;
-}
 #component {
 	height: 600px;
 }
-#component-rich .logo, #component-web .logo {
-	max-height: 2.5em;
-	max-width: 10em;
+.logo {
+	max-height: 2em;
+	max-width: 6em;
 }
 #benefits, #drawbacks {
 	height: 768px;
@@ -88,6 +85,9 @@
 #different h2 {
 	right: 0;
 	left: auto;
+}
+#compatibility h2 {
+	top: 300px;
 }
 
 #imgcredits {
