@@ -46,8 +46,8 @@
 	height: 600px;
 }
 .logo {
-	max-height: 2em;
-	max-width: 6em;
+	max-height: 2.5em;
+	max-width: 8em;
 }
 #benefits, #drawbacks {
 	height: 768px;
@@ -74,8 +74,12 @@
 	top: 150px;
 }
 
+#tapestry-modules .syntaxhighlighter {
+	font-size: 25px ! important;
+}
+
 #metaprogramming-own-2 .syntaxhighlighter {
-	font-size: 18px ! important;
+	font-size: 22px ! important;
 }
 
 #momentum h2 {
@@ -91,7 +95,14 @@
 }
 
 #imgcredits {
-	display: none;
+	font-size: 16px;
+}
+#imgcredits img {
+	width: 80px;
+	vertical-align: middle;
+}
+#imgcredits a {
+	display: block;
 }
 
 #overview {

@@ -130,7 +130,7 @@ body     { pointer-events: none; }
     opacity: 0.4;
 }
 .hide:not(.active) {
-	opacity: 0;
+	display: none;
 }
 .show:not(.active) {
 	opacity: 1;

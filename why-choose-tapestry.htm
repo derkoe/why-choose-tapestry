@@ -243,6 +243,36 @@
 			<div id="modules-dependencies-2" class="step" data-x="2600" data-y="4100">
 				<img alt="Modularity" src="resources/images/modules_dependencies2.svg" />
 			</div>
+			<div id="tapestry-ioc" class="step slide" data-x="2600" data-y="4900">
+				<h2>Tapestry IoC</h2>
+				<ul>
+					<li>IoC/DI container</li>
+					<li>Extensibility of Tapestry</li>
+					<li>Tapestry distributed configuration</li>
+					<li>Eclipse-like plugins</li>
+				</ul>
+			</div>
+			<div id="tapestry-modules" class="step slide" data-x="2600" data-y="5700">
+				<h2>Tapestry Module</h2>
+				<script type="syntaxhighlighter" class="brush: java; toolbar: false; gutter: false;"><![CDATA[
+				public class PersonModule {
+				  public static void bind(ServiceBinder binder) {
+				    binder.bind(PersonService.class, PersonServiceImpl.class);
+				  }
+
+				  public static CountryService build(Repository<Country> repo) {
+				    return new CountryService(repo);
+				  }
+
+				  @Contribute(BeanBlockSource.class)
+				  public static void provideBeanBlocks(
+				      Configuration<BeanBlockContribution> configuration) {
+				    configuration.add(new EditBlockContribution("country", 
+				        "person/PersonBlocks", "editCountry"));
+				  }
+				}
+				]]></script>
+			</div>
 
 			<div id="metaprogramming" class="step imageslide" data-x="3800" data-y="2500">
 				<div class="title">Metaprogramming</div>
@@ -273,13 +303,13 @@
 				<div class="title">Add Your Own (1)</div>
 				<script type="syntaxhighlighter" class="brush: java; toolbar: false; gutter: false;"><![CDATA[
 					@RequiresRole("user-view")
-					public UserList
-					{
+					public UserList	{
+					
 					  @RequiresRole("user-edit")
-					  void onDeleteUser(Long userId)
-					  {
+					  void onDeleteUser(Long userId) {
 					    ...
 					  }
+					
 					}
 					]]>
 				</script>
@@ -287,34 +317,28 @@
 			<div id="metaprogramming-own-2" class="step slide" data-x="3800" data-y="4900">
 				<div class="title">Add Your Own (2)</div>
 				<script type="syntaxhighlighter" class="brush: java; toolbar: false; gutter: false;"><![CDATA[
-					public class RequiresRoleWorker implements ComponentClassTransformWorker2 
-					{
-					    private final HttpServletRequest request;
+					public class RequiresRoleWorker implements ComponentClassTransformWorker2 {
+					  private final HttpServletRequest request;
 					
-					    public RequiresRoleWorker(HttpServletRequest request) 
-					    {
-					      super();
-					      this.request = request;
-					    }
+					  public RequiresRoleWorker(HttpServletRequest request) {
+					    this.request = request;
+					  }
 					
-					    public void transform(PlasticClass plasticClass, TransformationSupport support, 
-					        MutableComponentModel model) 
-					    {
-					      for (PlasticMethod method : plasticClass.getMethodsWithAnnotation(RequiresRole.class)) 
-					      {
-					        final String role = method.getAnnotation(RequiresRole.class).value();
-					        method.addAdvice(new MethodAdvice()
-					        {
-					          public void advise(MethodInvocation invocation)
-					          {
-					            if (request.isUserInRole(role))
-					              invocation.proceed();
-					            else
-					              throw new SecurityException("User has no role " + role);
-					          }
-					        });
-					      }
+					  public void transform(PlasticClass plasticClass, 
+					      TransformationSupport support, MutableComponentModel model) {
+					    for (PlasticMethod method : 
+					           plasticClass.getMethodsWithAnnotation(RequiresRole.class)) {
+					      final String role = method.getAnnotation(RequiresRole.class).value();
+					      method.addAdvice(new MethodAdvice() {
+					        public void advise(MethodInvocation invocation) {
+					          if (request.isUserInRole(role))
+					            invocation.proceed();
+					          else
+					            throw new SecurityException("User has no role " + role);
+					        }
+					      });
 					    }
+					  }
 					}
 					]]>
 				</script>
@@ -380,6 +404,7 @@
 			<div id="different" class="step imageslide" data-x="200" data-y="6500">
 				<h2>Different</h2>
 				<img alt="Different" src="resources/images/different.jpg">
+				
 			</div>
 			<div id="onemanshow" class="step imageslide" data-x="1400" data-y="6500">
 				<h2>One Man Show?</h2>
@@ -390,18 +415,18 @@
 				<img alt="One Man Show" src="resources/images/compatibility.jpg">
 			</div>
 
-			<div id="imgcredits">
-				<a href="http://www.flickr.com/photos/illbethesun/2858631255/">Yug_and_her</a><br/>
-				<a href="http://xkcd.com/815/"><img alt="" src="resources/images/mu.png" width="100" /> http://xkcd.com/815/</a><br/>
-				<a href="http://www.flickr.com/photos/proimos/4199675334/"><img alt="" src="resources/images/head_in_hand.jpg" width="100" /> http://www.flickr.com/photos/proimos/4199675334/</a>
-				modules.jpg http://www.flickr.com/photos/donsolo/2136923757/
-				speed.jpg http://www.porsche.com/microsite/911gt2rs/flash/images/wallpaper/1280x1024/07_gt2rs.jpg
-				secure.jpg http://www.flickr.com/photos/muitosabao/5190451800/
-				relativity.jpg http://www.andrewlipson.com/escher/relativity.html
-				onemanshow.jpg http://www.flickr.com/photos/lord_dane/5058487375/
-				momentum.jpg http://www.flickr.com/photos/bass_nroll/3208668339/
-				different.jpg http://www.flickr.com/photos/36292117@N00/4758628570/
-				compatibility.jpg http://www.flickr.com/photos/aldoaldoz/3895614433/
+			<div id="imgcredits" class="step hide" data-x="3800" data-y="6500">
+				<h2>Image Credits</h2>
+				<a href="http://xkcd.com/815/"><img alt="" src="resources/images/mu.png"/> http://xkcd.com/815/</a>
+				<a href="http://www.flickr.com/photos/proimos/4199675334/"><img alt="" src="resources/images/head_in_hand.jpg"/> http://www.flickr.com/photos/proimos/4199675334/</a>
+				<a href="http://www.flickr.com/photos/donsolo/2136923757/"><img alt="" src="resources/images/modules.jpg" /> http://www.flickr.com/photos/donsolo/2136923757/</a>
+				<a href="http://www.porsche.com/microsite/911gt2rs/flash/images/wallpaper/1280x1024/07_gt2rs.jpg"><img alt="" src="resources/images/speed.jpg" /> http://www.porsche.com/microsite/911gt2rs/flash/images/wallpaper/1280x1024/07_gt2rs.jpg</a>
+				<a href="http://www.flickr.com/photos/muitosabao/5190451800/"><img alt="" src="resources/images/secure.jpg" /> http://www.flickr.com/photos/muitosabao/5190451800/</a>
+				<a href="http://www.andrewlipson.com/escher/relativity.html"><img alt="" src="resources/images/relativity.jpg" /> http://www.andrewlipson.com/escher/relativity.html</a>
+				<a href="http://www.flickr.com/photos/lord_dane/5058487375/"><img alt="" src="resources/images/onemanshow.jpg" /> http://www.flickr.com/photos/lord_dane/5058487375/</a>
+				<a href="http://www.flickr.com/photos/bass_nroll/3208668339/"><img alt="" src="resources/images/momentum.jpg" /> http://www.flickr.com/photos/bass_nroll/3208668339/</a>
+				<a href="http://www.flickr.com/photos/36292117@N00/4758628570/"><img alt="" src="resources/images/different.jpg" /> http://www.flickr.com/photos/36292117@N00/4758628570/</a>
+				<a href="http://www.flickr.com/photos/aldoaldoz/3895614433/"><img alt="" src="resources/images/compatibility.jpg" /> http://www.flickr.com/photos/aldoaldoz/3895614433/</a>
 			</div>
 
 			<!-- Overview -->
@@ -415,7 +440,7 @@
 		<div id="tapestry_logo" title="Apache Tapestry"></div>
 
 		<script type="text/javascript">
-		     SyntaxHighlighter.all()
+		(function() { SyntaxHighlighter.all() })();
 		</script>
 		<script src="resources/js/impress.js"></script>
 		<script>impress().init();</script>
