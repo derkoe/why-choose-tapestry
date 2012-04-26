@@ -31,6 +31,12 @@
 	float: right;
 }
 
+#confess h2 {
+	top: 0;
+	right: 0;
+	left: 500px;
+}
+
 #web-framework-controversy h1 {
 	color: #999;
 }
