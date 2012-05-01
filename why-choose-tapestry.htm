@@ -139,20 +139,21 @@
 			<div id="write-less" class="step slide" data-x="-1000" data-y="4100">
 				<div class="title">Write Less</div>
 				<script type="syntaxhighlighter" class="brush: java; toolbar: false; gutter: false;"><![CDATA[
-					@Property
-					private Person person;
+					@Property @Persist
+					private String userName;
 					]]>
 				</script>
 				vs.
 				<script type="syntaxhighlighter" class="brush: java; toolbar: false; gutter: false;"><![CDATA[
-					private Person person;
-					
-					public Person getPerson() {
-					  return person;
+					public String getUserName() {
+					  Session session = request.getSession(false);
+					  return session == null ? null : 
+					    (String) session.getAttribute("UserName");
 					}
 					
-					public Person setPerson(Person p) {
-					  person = p;
+					public void setUserName(String userName) {
+					  request.getSession(true)
+					  	.setAttribute("UserName", userName);
 					}
 					]]>
 				</script>
@@ -171,7 +172,7 @@
 				<img alt="Head in hand" src="resources/images/head_in_hand.jpg" />
 			</div>
 			<div id="stacktrace" class="step slide" data-x="200" data-y="3300">
-				<div class="title">Stacktrace</div>
+				<div class="title">Non-Tapestry Stacktrace</div>
 				<div class="center">
 					<img alt="Arbitary Stacktrace" src="resources/images/stacktrace.png" height="550"/>
 				</div>
@@ -367,7 +368,7 @@
 				<h2>Static Structure,<br/> Dynamic Behavior</h2>
 				<ul>
 					<li>Pages are singletons</li>
-					<li>Members are held in ThreadLocales</li>
+					<li>Members are held in a ThreadLocal map</li>
 					<li>Masks variables while debugging</li>
 				</ul>
 			</div>
@@ -379,9 +380,11 @@
 			<div id="speed-best-practices" class="step slide" data-x="5000" data-y="5700">
 				<h2>Speed Best Practices</h2>
 				<ul>
-					<li>Combines and compresses JavaScripts & CSSs</li>
 					<li>GZIP compression</li>
-					<li>Eliminates whitespace</li>
+					<li>Cacheable URLs & Far-Future expires headers</li>
+					<li>Eliminates unnecessary whitespace</li>
+					<li>JavaScript is combined, compressed (YUICompressor) and GZIPed</li>
+					<li>CSS is compressed (YUICompressor) and GZIPed</li>
 				</ul>
 			</div>
 
@@ -423,7 +426,7 @@
 			</div>
 
 			<div id="summary" class="step" data-scale="3" data-x="7800" data-y="6800">
-				<h2>Summary</h2>
+				<h2>Summary & Outlook</h2>
 			</div>
 			<div id="conclusion" class="step slide" data-x="7000" data-y="6500">
 				<h2>Conclusion</h2>
@@ -433,19 +436,28 @@
 					<li>Good documentation, responsive mailing list</li>
 				</ul>
 			</div>
-			<div id="sources" class="step slide" data-x="8200" data-y="6500">
+			<div id="outlook" class="step slide" data-x="8200" data-y="6500">
+				<h2>Outlook</h2>
+				<ul>
+					<li>CoffeeScript, Less and/or SASS</li>
+					<li>jQuery replaces Prototype + JS abstraction layer</li>
+					<li>More focus on client-side and JS</li>
+				</ul>
+			</div>
+			<div id="sources" class="step slide" data-x="7000" data-y="7300">
 				<h2>Tapestry Sources</h2>
 				<ul>
-					<li>TODO Igor's new book</li>
+					<li>Igor Drobiazko, Tapestry 5. Rapid Web Application Development in Java</li>
 					<li><img src="resources/images/book_de_drobiazko.jpg" alt=""/> Igor Drobiazko, Tapestry 5: Die Entwicklung von Webanwendungen mit Leichtigkeit!</li>
 					<li><img src="resources/images/book_kolesnikov.jpg" alt=""/> Alexander Kolesnikov, Tapestry 5: Building Web Applications</li>
 					<li><a href="http://jumpstart.doublenegative.com.au/">Tapestry Jumpstart</a></li>
 					<li><a href="http://tawus.wordpress.com/category/tapestry/">Java Magic blog</a></li>
 					<li><a href="http://blog.tapestry5.de/">Igor Drobiazko's blog</a></li>
+					<li><a href="http://tapestryjava.blogspot.com/">Tapestry Central blog</a></li>
 					<li><a href="http://tapestry.apache.org/">Tapestry Home Page</a></li>
 				</ul>
 			</div>
-			<div id="imgcredits" class="step" data-x="7600" data-y="7300">
+			<div id="imgcredits" class="step" data-x="8200" data-y="7300">
 				<h2>Image Credits</h2>
 				<a href="https://en.wikipedia.org/wiki/File:Amiga500_system.jpg"><img alt="" src="resources/images/amiga.jpg"/> https://en.wikipedia.org/wiki/File:Amiga500_system.jpg</a>
 				<a href="http://xkcd.com/815/"><img alt="" src="resources/images/mu.png"/> http://xkcd.com/815/</a>
