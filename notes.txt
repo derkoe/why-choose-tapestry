@@ -60,3 +60,8 @@
 # metaprogramming-tap
  - Tapestry comes with many meta-programming concepts
  - Event-handlers, 
+ 
+ #speed-benchmark
+ - subsequent to 5.2.5, Tapestry has been sped up in a number of ways:
+ - replacing Javassist with a wrapper around ASM
+ - reducing overall memory utilization.
