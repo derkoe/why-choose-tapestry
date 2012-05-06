@@ -1,13 +1,15 @@
 # web-framework-controversy
- - mention 3 words -> always start verbal fight
+ - emotions
+ - verbal fight
 # orientation
  - place of Tapestry in framework world
+ - non-JVM Ruby, Python?
+ - Java, Scala, Groovy?
 # actionvscomponent
- - 
 # mvc
  - Model 2 archiecture
- - controller does stuff, changes "model"
- - delegates to a view
+ - controller does stuff, changes "model" delegates to a view
+ - 90% of homegrown frameworks
 # component
  - richt vs. web
 # rich
@@ -65,3 +67,5 @@
  - subsequent to 5.2.5, Tapestry has been sped up in a number of ways:
  - replacing Javassist with a wrapper around ASM
  - reducing overall memory utilization.
+
+ 
