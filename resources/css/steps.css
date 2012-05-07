@@ -136,5 +136,9 @@
 
 #overview {
 	background: rgba(255, 255, 255, 0.4);
-	color: #333;
+	color: black;
+}
+#overview a {
+	font-size: 0.5em;
+	color: black;
 }
